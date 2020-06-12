@@ -5,6 +5,7 @@ export default function Band() {
   const [btnViewCursor, setBtnViewCursor] = useState("cursor-not-allowed");
   const [btnViewText, setBtnViewText] = useState("Please wait..");
   const [btnViewState, setBtnViewState] = useState(true);
+  const [btnviewDisplay, setBtnViewDisplay] = useState(" hidden");
 
   const [btnvisitCursor, setBtnVisitCursor] = useState("cursor-not-allowed");
   const [btnvisitText, setBtnVisitText] = useState("Please wait..");
@@ -51,7 +52,7 @@ export default function Band() {
         <button
           className={
             "bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " +
-            btnViewCursor
+            btnViewCursor + btnviewDisplay
           }
           onClick={() => startCount()}
           disabled={btnViewState}

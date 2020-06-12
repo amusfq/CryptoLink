@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
 export default function Realme() {
   const [btnViewCursor, setBtnViewCursor] = useState("cursor-not-allowed");
   const [btnViewText, setBtnViewText] = useState("Please wait..");
   const [btnViewState, setBtnViewState] = useState(true);
+  const [btnviewDisplay, setBtnViewDisplay] = useState(" hidden");
 
   const [btnvisitCursor, setBtnVisitCursor] = useState("cursor-not-allowed");
   const [btnvisitText, setBtnVisitText] = useState("Please wait..");
   const [btnvisitState, setBtnVisitState] = useState(true);
   const [btnvisitDisplay, setBtnVisitDisplay] = useState(" hidden");
+  const [cookie, , removeCookie] = useCookies();
 
   useEffect(() => {
     if (cookie["target"] !== undefined) {
@@ -48,7 +51,8 @@ export default function Realme() {
         <button
           className={
             "bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " +
-            btnViewCursor
+            btnViewCursor +
+            btnviewDisplay
           }
           onClick={() => startCount()}
           disabled={btnViewState}
