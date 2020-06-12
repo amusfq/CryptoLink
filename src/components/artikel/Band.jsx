@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
 export default function Band() {
   const [btnViewCursor, setBtnViewCursor] = useState("cursor-not-allowed");
@@ -9,13 +10,16 @@ export default function Band() {
   const [btnvisitText, setBtnVisitText] = useState("Please wait..");
   const [btnvisitState, setBtnVisitState] = useState(true);
   const [btnvisitDisplay, setBtnVisitDisplay] = useState(" hidden");
+  const [cookie, , removeCookie] = useCookies();
 
   useEffect(() => {
-    setTimeout(() => {
-      setBtnViewCursor("");
-      setBtnViewText("View Link");
-      setBtnViewState(false);
-    }, 5000);
+    if (cookie["target"] !== undefined) {
+      setTimeout(() => {
+        setBtnViewCursor("");
+        setBtnViewText("View Link");
+        setBtnViewState(false);
+      }, 5000);
+    }
   }, []);
 
   function startCount() {
@@ -34,7 +38,7 @@ export default function Band() {
   }
 
   function visit() {
-    window.location.href = '/resolver';
+    window.location.href = "/resolver";
   }
 
   return (

@@ -11,11 +11,13 @@ export default function Ios() {
   const [btnvisitDisplay, setBtnVisitDisplay] = useState(" hidden");
 
   useEffect(() => {
-    setTimeout(() => {
-      setBtnViewCursor("");
-      setBtnViewText("View Link");
-      setBtnViewState(false);
-    }, 5000);
+    if (cookie["target"] !== undefined) {
+      setTimeout(() => {
+        setBtnViewCursor("");
+        setBtnViewText("View Link");
+        setBtnViewState(false);
+      }, 5000);
+    }
   }, []);
 
   function startCount() {
