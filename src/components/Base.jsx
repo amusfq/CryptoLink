@@ -33,9 +33,9 @@ function Base() {
   return (
     <div className="container mx-auto px-10">
       <div className="flex flex-wrap">
-        <div className="w-3/5 p-2 text-center ">{include()}</div>
+        <div className="w-full lg:w-3/5 p-2 text-center ">{include()}</div>
         {/* Sidebar */}
-        <div className="w-2/5 p-2 px-10">
+        <div className="w-full lg:w-2/5 p-2 px-10">
           <div className="text-blue-600 font-bold text-2xl border-t-2 border-gray-400 py-2">
             Artikel Lainnya
           </div>
