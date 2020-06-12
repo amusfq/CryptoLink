@@ -15,6 +15,7 @@ export default function Ios() {
 
   useEffect(() => {
     if (cookie["target"] !== undefined) {
+      setBtnViewDisplay("");
       setTimeout(() => {
         setBtnViewCursor("");
         setBtnViewText("View Link");

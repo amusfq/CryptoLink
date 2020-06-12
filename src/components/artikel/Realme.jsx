@@ -15,6 +15,7 @@ export default function Realme() {
 
   useEffect(() => {
     if (cookie["target"] !== undefined) {
+      setBtnViewDisplay("");
       setTimeout(() => {
         setBtnViewCursor("");
         setBtnViewText("View Link");
